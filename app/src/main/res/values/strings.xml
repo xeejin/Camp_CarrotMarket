@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Camp_CarrotMarket</string>
+    <string name="notification_channel_name">carrotmarket</string>
+    <string name="notification_channel_description">당근마켓의 알림 채널입니다.</string>
+    <string name="notification_channel_id">carrotmarket</string>
+    <string name="notification_id">1</string>
 </resources>

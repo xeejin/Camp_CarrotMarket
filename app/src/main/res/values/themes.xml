@@ -2,6 +2,10 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Camp_CarrotMarket" parent="Theme.Material3.DayNight.NoActionBar">
         <item name = "android:background">@color/white</item>
+<!--        안드로이드 상단 액션바 제거-->
+        <item name="windowActionBar">false</item>
+<!--        안드로이드 상단 타이틀바 제거-->
+        <item name="windowNoTitle">true</item>
     </style>
 
     <style name="Theme.Camp_CarrotMarket" parent="Base.Theme.Camp_CarrotMarket" />

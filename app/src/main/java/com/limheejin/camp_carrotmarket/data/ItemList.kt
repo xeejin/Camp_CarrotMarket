@@ -6,13 +6,13 @@ object ItemList {
     val dummyData = listOf(
         Item(
             id = 1,
-            name = "산지 한달 된 선풍기 팝니다.",
+            name = "산지 한달 된 선풍기 팝니다",
             content = """
                 이사가서 필요가 없어졌어요!
                 급하게 내놓습니다. 
             """.trimIndent(),
             seller = "대현동",
-            price = 1_000,
+            price = 1000,
             address = "서울 서대문구 창천동",
             likeCount = 13,
             chatCount = 25,
@@ -23,7 +23,7 @@ object ItemList {
             name = "김치냉장고",
             content = "이사로 인해 내놔요",
             seller = "안마담",
-            price = 20_000,
+            price = 20000,
             address = "인천 계양구 귤현동",
             likeCount = 8,
             chatCount = 28,
@@ -32,9 +32,9 @@ object ItemList {
         Item(
             id = 3,
             name = "샤넬 카드지갑",
-            content = "고퀄 지갑이구요. \n사용감이 있어서 싸게 내어둡니다",
+            content = "고퀄 지갑이구요! \n사용감이 있어서 싸게 내어둡니다",
             seller = "코코유",
-            price = 10_000,
+            price = 10000,
             address = "수성구 범어동",
             likeCount = 23,
             chatCount = 5,
@@ -50,7 +50,7 @@ object ItemList {
                 미국 이주 관계로 싸게 팝니다
             """.trimIndent(),
             seller = "Nicole",
-            price = 10_000,
+            price = 10000,
             address = "해운대구 우제2동",
             likeCount = 14,
             chatCount = 17,
@@ -65,7 +65,7 @@ object ItemList {
                 화면에 살짝 스크래치 난 것 말고 크게 이상은 없습니다!
             """.trimIndent(),
             seller = "절명",
-            price = 150_000,
+            price = 150000,
             address = "연제구 연산제8동",
             likeCount = 22,
             chatCount = 9,
@@ -76,7 +76,7 @@ object ItemList {
             name = "프라다 복조리백",
             content = "까임 오염 없고 상태 깨끗합니다. 정품 여부 모름",
             seller = "미니멀하게",
-            price = 50_000,
+            price = 50000,
             address = "수원시 영통구 원천동",
             likeCount = 25,
             chatCount = 16,
@@ -100,7 +100,7 @@ object ItemList {
                 10. 저희 집안이 쓰는 별장입니다.
             """.trimIndent(),
             seller = "굿리치",
-            price = 150_000,
+            price = 150000,
             address = "수원시 영통구 원천동",
             likeCount = 25,
             chatCount = 16,
@@ -125,9 +125,9 @@ object ItemList {
         ),
         Item(
             id = 9,
-            name = "4행정 엔진분무기 판매합니다.",
+            name = "4행정 엔진분무기 판매합니다!!!",
             content = """
-                3년 전에 사서 한 번 사용하고 그대로 둔 상태입니다. 
+                3년 전에 사서 한 번 사용하고 그대로 둔 상태입니다 
                 요즘 사용은 안 해봤습니다. 
                 그래서 저렴하게 내 놓습니다. 
                 중고라 반품은 어렵습니다.

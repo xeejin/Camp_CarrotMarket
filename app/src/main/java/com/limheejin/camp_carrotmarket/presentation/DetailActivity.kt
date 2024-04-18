@@ -23,5 +23,8 @@ class DetailActivity : AppCompatActivity() {
             insets
         }
 
+        binding.btnBack.setOnClickListener { finish() }
+
+
     }
 }

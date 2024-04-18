@@ -3,6 +3,7 @@ package com.limheejin.camp_carrotmarket.data
 import android.os.Parcelable
 import androidx.annotation.DrawableRes
 import kotlinx.parcelize.Parcelize
+import java.text.DecimalFormat
 
 @Parcelize
 data class Item(
@@ -16,4 +17,6 @@ data class Item(
     val chatCount : Int,
     @DrawableRes val itemImage : Int
 ): Parcelable
+
+fun priceDecimal(price: Int): String = DecimalFormat("###,###,###.##").format(price)
 

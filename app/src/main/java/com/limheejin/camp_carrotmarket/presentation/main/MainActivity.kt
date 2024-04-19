@@ -1,25 +1,27 @@
-package com.limheejin.camp_carrotmarket.presentation
+package com.limheejin.camp_carrotmarket.presentation.main
 
-import android.Manifest
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.DialogInterface
 import android.content.Intent
-import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
+import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.limheejin.camp_carrotmarket.R
-import com.limheejin.camp_carrotmarket.data.Item
 import com.limheejin.camp_carrotmarket.data.ItemList
 import com.limheejin.camp_carrotmarket.databinding.ActivityMainBinding
+import com.limheejin.camp_carrotmarket.presentation.detail.DetailActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -40,7 +42,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         initRecyclerView()
-        binding.btnNotification.setOnClickListener { createNotification() }
+        binding.btnNotification.setOnClickListener {
+            checkPermission()
+            createNotification()
+        }
 
 //        itemAdapter.setOnItemClickListener(object : ItemAdapter.OnItemClickListener{
 //            override fun onItemClick(item: Item, position: Int) {
@@ -53,11 +58,47 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
     private fun initRecyclerView() {
-        itemAdapter = ItemAdapter(itemList)
+        var itemData = ItemList.dummyData
+        val onClick: (Int) -> Unit = { position ->
+            onItemClickListener(position)
+        }
+        val onLongClick: (Int) -> Boolean = {
+//            onItemLongClickListener(position)
+            false
+        }
+        itemAdapter = ItemAdapter(onClick, onLongClick).apply {
+            items = itemData
+        }
+
         with(binding.rvItemList) {
             adapter = itemAdapter
             layoutManager = LinearLayoutManager(context)
+            addItemDecoration(DividerItemDecoration(context, LinearLayout.VERTICAL)) // 구분선 추가
+        }
+    }
+
+    private fun onItemClickListener(position: Int) {
+        val intent = Intent(this, DetailActivity::class.java)
+        intent.putExtra("item", ItemList.dummyData[position])
+        intent.putExtra("item_position", position)
+        startActivity(intent)
+    }
+
+//    private fun onItemLongClickListener(position: Int): Boolean {
+//
+//    }
+
+    private fun checkPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (!NotificationManagerCompat.from(this).areNotificationsEnabled()) {
+                (Toast.makeText(this, "알림 권한을 허용해주세요.", Toast.LENGTH_SHORT)).show()
+                val intent = Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS).apply {
+                    putExtra(Settings.EXTRA_APP_PACKAGE, packageName)
+                }
+                startActivity(intent)
+            }
         }
     }
 

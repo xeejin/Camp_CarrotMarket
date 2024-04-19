@@ -1,26 +1,18 @@
-package com.limheejin.camp_carrotmarket.presentation
+package com.limheejin.camp_carrotmarket.presentation.main
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.limheejin.camp_carrotmarket.data.Item
-import com.limheejin.camp_carrotmarket.data.priceDecimal
+import com.limheejin.camp_carrotmarket.model.Item
+import com.limheejin.camp_carrotmarket.model.priceDecimal
 import com.limheejin.camp_carrotmarket.databinding.ItemItemsBinding
 
-class ItemAdapter(private val items: List<Item>) : RecyclerView.Adapter<ItemAdapter.MyViewHolder>(){
+class ItemAdapter(
+    private val onClick: (Int) -> Unit,
+    private val onLongClick: (Int) -> Boolean
+) : RecyclerView.Adapter<ItemAdapter.MyViewHolder>(){
 
-    // Click listener interface
-    interface OnItemClickListener {
-        fun onItemClick(item: Item, position: Int)
-    }
-
-    // Listener instance
-    private var listener: OnItemClickListener? = null
-
-    // Method to set listener
-    fun setOnItemClickListener(listener: OnItemClickListener) {
-        this.listener = listener
-    }
+    var items: List<Item> = listOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val binding = ItemItemsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -30,16 +22,17 @@ class ItemAdapter(private val items: List<Item>) : RecyclerView.Adapter<ItemAdap
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = items[position]
         holder.bind(currentItem)
-
-        holder.itemView.setOnClickListener {
-            listener?.onItemClick(currentItem, position)
-        }
     }
 
     override fun getItemCount() = items.size
 
     inner class MyViewHolder(val binding: ItemItemsBinding) : RecyclerView.ViewHolder(binding.root){
-
+        init {
+            with(itemView){
+                setOnClickListener { onClick(adapterPosition) }
+                setOnLongClickListener { onLongClick(adapterPosition) }
+            }
+        }
         fun bind(data: Item){
             with(binding){
                 ivItemImage.setImageResource(data.itemImage)
@@ -50,6 +43,7 @@ class ItemAdapter(private val items: List<Item>) : RecyclerView.Adapter<ItemAdap
                 tvHeartCount.text = data.likeCount.toString()
             }
         }
+
     }
 
 }

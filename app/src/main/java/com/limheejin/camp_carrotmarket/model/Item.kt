@@ -1,4 +1,4 @@
-package com.limheejin.camp_carrotmarket.data
+package com.limheejin.camp_carrotmarket.model
 
 import android.os.Parcelable
 import androidx.annotation.DrawableRes

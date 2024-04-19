@@ -1,9 +1,10 @@
 package com.limheejin.camp_carrotmarket.data
 
 import com.limheejin.camp_carrotmarket.R
+import com.limheejin.camp_carrotmarket.model.Item
 
 object ItemList {
-    val dummyData = listOf(
+    var dummyData = mutableListOf(
         Item(
             id = 1,
             name = "산지 한달 된 선풍기 팝니다",

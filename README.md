@@ -1,11 +1,15 @@
 # :iphone: Carrot Market
 
 <br/>
-<p align="center">
-   <img src="https://github.com/xeejin/Camp_CarrotMarket/assets/141006937/d369effd-c32d-4dfd-bcab-ae1192f76299" height=700px align="center">
-   <img src="https://github.com/xeejin/Camp_CarrotMarket/assets/141006937/c8cbba07-71fe-43f9-b334-dca48d7dfdda" height=700px align="center">
-   <figcaption align="center"></figcaption>
-</p>
+
+|기본적인 UI 구현|데이터 연결|
+|------|---|
+|<img src="https://github.com/xeejin/Camp_CarrotMarket/assets/141006937/d369effd-c32d-4dfd-bcab-ae1192f76299" width=400px>|   <img src="https://github.com/xeejin/Camp_CarrotMarket/assets/141006937/c8cbba07-71fe-43f9-b334-dca48d7dfdda" width=400px>|
+
+|알림 클릭|뒤로가기 버튼|
+|---|---|
+|<img src="https://github.com/xeejin/Camp_CarrotMarket/assets/141006937/f9d4def2-7152-4994-8889-49650ec329d8" width=400px>|<img src="https://github.com/xeejin/Camp_CarrotMarket/assets/141006937/24a4db84-a2d7-4177-b626-6009adf083db" width=400px>|
+
 <br/>
 
 ## :tada: Used Tech

@@ -2,6 +2,7 @@ package com.limheejin.camp_carrotmarket.presentation.main
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.content.ClipData.Item
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Build
@@ -46,16 +47,6 @@ class MainActivity : AppCompatActivity() {
             checkPermission()
             createNotification()
         }
-
-//        itemAdapter.setOnItemClickListener(object : ItemAdapter.OnItemClickListener{
-//            override fun onItemClick(item: Item, position: Int) {
-//                val intent = Intent(this@MainActivity, DetailActivity::class.java)
-//                intent.putExtra("item", item)
-//                intent.putExtra("item_position", position)
-//                startActivity(intent)
-//            }
-//        })
-
     }
 
 
@@ -81,9 +72,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun onItemClickListener(position: Int) {
         val intent = Intent(this, DetailActivity::class.java)
-        intent.putExtra("item", ItemList.dummyData[position])
-        intent.putExtra("item_position", position)
+        intent.putExtra("itemFromMainActivity", ItemList.dummyData[position])
+        intent.putExtra("itemPositionFromMainActivity", position)
         startActivity(intent)
+
+        //        val bundle = Bundle().apply{
+//            putParcelable(DetailActivity.EXTRA_CARD, card)
+//        }
+//        intent.putExtra(bundle)
     }
 
 //    private fun onItemLongClickListener(position: Int): Boolean {

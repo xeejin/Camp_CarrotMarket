@@ -145,6 +145,7 @@
                 android:layout_marginStart="18dp"
                 android:layout_marginTop="28dp"
                 android:layout_marginEnd="18dp"
+                android:layout_marginBottom="28dp"
                 android:text="
             울산 동해바다뷰 60평 복층 펜트하우스 1일 숙박권
             (에어컨이 없기에 낮은 가격으로 변경했으며 8월 초 가장 더운날 다녀가신 분 경우 시원했다고 잘 지내다 가셨습니다)
@@ -160,6 +161,7 @@
             10. 저희 집안이 쓰는 별장입니다.
             "
                 android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"

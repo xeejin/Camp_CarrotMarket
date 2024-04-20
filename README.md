@@ -1,24 +1,23 @@
-# :iphone: 사과마켓 구현 앱
+# :iphone: Carrot Market
 
 <br/>
-
 <p align="center">
+   <img src="https://github.com/xeejin/Camp_CarrotMarket/assets/141006937/d369effd-c32d-4dfd-bcab-ae1192f76299" height=700px align="center">
+   <img src="https://github.com/xeejin/Camp_CarrotMarket/assets/141006937/c8cbba07-71fe-43f9-b334-dca48d7dfdda" height=700px align="center">
    <figcaption align="center"></figcaption>
 </p>
-
 <br/>
 
-## :tada: 배운 지식 혹은 필요한 지식
+## :tada: Used Tech
 - ViewBinding
 - ListView, GridView, CustomView
 - RecyclerView
 - Dialog
 - Notification
 - Fragment
-
 <br/>
 
-## :hammer: 메인 페이지 만들기
+## :hammer: Main Page
 
 - [X]  디자인 및 화면 구성을 최대한 동일하게 구현 (사이즈 및 여백도 최대한 맞춤 ✨)
 - [X]  상품 데이터는 ```Dummy Data```를 사용, 싱글톤으로 구현
@@ -35,7 +34,7 @@
 
 <br/>
  
-## :hammer: 상품 상세페이지 만들기
+## :hammer: Item Detail Page
 
 - [X]  디자인 및 화면 구성을 최대한 동일하게 구현 (사이즈 및 여백도 최대한 맞춤 ✨) 
 - [X]  메인화면에서 전달받은 데이터로 판매자, 주소, 아이템, 글내용, 가격등을 화면에 표시
